@@ -1,0 +1,140 @@
+body {
+  background: #E6E6FA;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Calendar & Clock */
+.calendar, .clock {
+  width: 150px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+#clock {
+  font-size: 1.2rem;
+}
+
+/* To-Do Section */
+.main-content {
+  flex-grow: 1;
+  min-width: 250px;
+  max-width: 350px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #8e44ad;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Task list styling */
+.task-list-wrapper ul {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.main-content:hover .task-list-wrapper ul {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+li {
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.3s ease;
+  width: 100%;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.02);
+  background-color: #D8A7B1;
+  color: white;
+}
+
+li
+
+.time-blocks li span[contenteditable="true"]:focus {
+  background-color: #fdf3ff;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+<div id="homepage" class="homepage">
+  <div class="homepage-box">
+    <h1>💜 Welcome to Your Lavender Dashboard</h1>
+    <p>This is your cozy place to plan your day, organize tasks, and stay inspired.</p>
+    <button onclick="enterDashboard()">Let’s Go →</button>
+  </div>
+</div>

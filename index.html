@@ -1,0 +1,41 @@
+<div id="homepage" class="homepage">
+  <div class="homepage-box">
+    <h1>💜 Welcome to Your Lavender Dashboard</h1>
+    <p>This is your cozy place to plan your day, organize tasks, and stay inspired.</p>
+    <button onclick="enterDashboard()">Let’s Go →</button>
+  </div>
+</div>
+
+<div class="dashboard">
+  <div class="calendar" id="calendar"></div>
+
+  <div class="main-content">
+    <h1>✨ Tasks for Today ✨</h1>
+    <div class="input-wrapper">
+      <input type="text" id="taskInput" placeholder="Enter a task" />
+      <button onclick="addTask()">Add Task</button>
+    </div>
+    <div class="task-list-wrapper">
+      <ul id="taskList"></ul>
+    </div>
+  </div>
+
+  <div class="clock" id="clock"></div>
+
+ <div class="time-blocks">
+  <h2>Today's Schedule</h2>
+  <ul>
+    <!-- schedule items go here -->
+  </ul>
+</div>
+
+
+<div class="quote-box" id="quoteBox">
+  <p id="quoteText">"Progress, not perfection."</p>
+</div>
+
+<div class="schedule-inputs">
+  <input type="text" id="timeInput" placeholder="Time (e.g. 9:00–10:00)">
+  <input type="text" id="activityInput" placeholder="Activity">
+  <button onclick="addScheduleItem()">Add to Schedule</button>
+</div>
