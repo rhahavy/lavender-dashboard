@@ -1,3 +1,4 @@
+/* === Global Styles === */
 body {
   background: #E6E6FA;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -5,6 +6,50 @@ body {
   padding: 0;
 }
 
+/* === Homepage Layout === */
+.homepage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.homepage-box {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-box h1 {
+  color: #732d91;
+  font-size: 2rem;
+}
+
+.homepage-box p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.homepage-box button {
+  padding: 12px 24px;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.homepage-box button:hover {
+  background-color: #732d91;
+}
+
+/* === Dashboard Styles === */
 .dashboard {
   display: flex;
   justify-content: space-between;
@@ -16,7 +61,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Calendar & Clock */
 .calendar, .clock {
   width: 150px;
   background-color: white;
@@ -32,7 +76,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* To-Do Section */
 .main-content {
   flex-grow: 1;
   min-width: 250px;
@@ -91,7 +134,6 @@ ul {
   padding: 0;
 }
 
-/* Task list styling */
 .task-list-wrapper ul {
   opacity: 0;
   pointer-events: none;
@@ -123,18 +165,8 @@ li:hover {
   color: white;
 }
 
-li
-
 .time-blocks li span[contenteditable="true"]:focus {
   background-color: #fdf3ff;
   border-radius: 6px;
   padding: 2px 4px;
 }
-
-<div id="homepage" class="homepage">
-  <div class="homepage-box">
-    <h1>💜 Welcome to Your Lavender Dashboard</h1>
-    <p>This is your cozy place to plan your day, organize tasks, and stay inspired.</p>
-    <button onclick="enterDashboard()">Let’s Go →</button>
-  </div>
-</div>
