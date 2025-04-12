@@ -3,43 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lavender Dashboard 💜</title>
+  <title>Welcome to Rhahavy’s Portfolio 💜</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script src="script.js" defer></script>
+  <style>
+    body {
+      background-color: #E6E6FA;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+      color: #4a4a4a;
+    }
+
+    .welcome-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #732d91;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .enter-button {
+      padding: 12px 24px;
+      background-color: #8e44ad;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: #732d91;
+    }
+  </style>
 </head>
 <body>
-  <div class="dashboard">
-    <div class="calendar" id="calendar"></div>
-
-    <div class="main-content">
-      <h1>✨ Tasks for Today ✨</h1>
-      <div class="input-wrapper">
-        <input type="text" id="taskInput" placeholder="Enter a task" />
-        <button onclick="addTask()">Add Task</button>
-      </div>
-      <div class="task-list-wrapper">
-        <ul id="taskList"></ul>
-      </div>
-    </div>
-
-    <div class="clock" id="clock"></div>
-
-    <div class="time-blocks">
-      <h2>Today's Schedule</h2>
-      <ul>
-      </ul>
-    </div>
+  <div class="welcome-box">
+    <h1>💜 Welcome to My Portfolio</h1>
+    <p>Hi, I’m Rhahavy. I build cool, interactive web things using HTML, CSS and Javascript.</p>
+    <img src="https://i.imgur.com/AfAmRMO.jpeg" alt="Cute meme" />
+    <br />
+    <button class="enter-button" onclick="enterSite()">Enter Portfolio →</button>
   </div>
 
-  <div class="quote-box" id="quoteBox">
-    <p id="quoteText">"Progress, not perfection."</p>
-  </div>
-
-  <div class="schedule-inputs">
-    <input type="text" id="timeInput" placeholder="Time (e.g. 9:00–10:00)" />
-    <input type="text" id="activityInput" placeholder="Activity" />
-    <button onclick="addScheduleItem()">Add to Schedule</button>
-  </div>
+  <script>
+    function enterSite() {
+      confetti({
+        particleCount: 120,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: ['#E6E6FA', '#D8A7B1', '#C1B2D3', '#FCEFF9']
+      });
+      setTimeout(() => {
+        window.location.href = 'dashboard.html'; // Change this if your main portfolio file has a different name
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
