@@ -120,8 +120,8 @@ function addScheduleItem() {
   document.getElementById("activityInput").value = "";
 }
 
+// ✅ Fixed version of enterDashboard
 function enterDashboard() {
   document.getElementById("homepage").style.display = "none";
   document.getElementById("dashboard").style.display = "block";
 }
-
