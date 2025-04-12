@@ -3,138 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Rhahavy’s Portfolio 💜</title>
+  <title>Lavender Dashboard 💜</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <style>
-    body {
-      background-color: #E6E6FA;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
-      color: #4a4a4a;
-    }
-
-    .welcome-box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #732d91;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    .enter-button {
-      padding: 12px 24px;
-      background-color: #8e44ad;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .enter-button:hover {
-      background-color: #732d91;
-    }
-  </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="welcome-box">
-    <h1>💜 Welcome to My Portfolio</h1>
-    <p>Hi, I’m Rhahavy. I build cool, interactive web things.</p>
-    <img src="https://i.imgur.com/AfAmRMO.jpeg" alt="Cute meme" />
-    <br />
-    <button class="enter-button" onclick="enterSite()">Enter Portfolio →</button>
+  <div class="dashboard">
+    <div class="calendar" id="calendar"></div>
+
+    <div class="main-content">
+      <h1>✨ Tasks for Today ✨</h1>
+      <div class="input-wrapper">
+        <input type="text" id="taskInput" placeholder="Enter a task" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="task-list-wrapper">
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+
+    <div class="clock" id="clock"></div>
+
+    <div class="time-blocks">
+      <h2>Today's Schedule</h2>
+      <ul>
+        <!-- Custom schedule items appear here -->
+      </ul>
+    </div>
   </div>
-<canvas id="glitterCanvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
 
-  <script>
-    function enterSite() {
-      confetti({
-        particleCount: 120,
-        spread: 90,
-        origin: { y: 0.6 },
-        colors: ['#E6E6FA', '#D8A7B1', '#C1B2D3', '#FCEFF9']
-      });
-      setTimeout(() => {
-        window.location.href = 'dashboard.html'; // Change this if your main portfolio file has a different name
-      }, 1000);
-    }
-  </script>
+  <div class="quote-box" id="quoteBox">
+    <p id="quoteText">"Progress, not perfection."</p>
+  </div>
 
-  <script>
-  const canvas = document.getElementById('glitterCanvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  function createParticle() {
-    return {
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 1,
-      opacity: Math.random(),
-      speedY: Math.random() * 0.5 + 0.2
-    };
-  }
-
-  function initGlitter() {
-    for (let i = 0; i < 100; i++) {
-      particles.push(createParticle());
-    }
-  }
-
-  function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-      ctx.fill();
-      p.y += p.speedY;
-      if (p.y > canvas.height) {
-        p.y = 0;
-        p.x = Math.random() * canvas.width;
-      }
-    });
-    requestAnimationFrame(drawParticles);
-  }
-
-  initGlitter();
-  drawParticles();
-</script>
-
+  <div class="schedule-inputs">
+    <input type="text" id="timeInput" placeholder="Time (e.g. 9:00–10:00)" />
+    <input type="text" id="activityInput" placeholder="Activity" />
+    <button onclick="addScheduleItem()">Add to Schedule</button>
+  </div>
 </body>
 </html>
