@@ -1,3 +1,5 @@
+// Lavender Dashboard JavaScript
+
 function addTask() {
   const taskInput = document.getElementById("taskInput");
   const taskText = taskInput.value.trim();
@@ -42,7 +44,7 @@ function addTask() {
   taskInput.value = "";
 }
 
-document.getElementById("taskInput").addEventListener("keydown", function (e) {
+document.getElementById("taskInput")?.addEventListener("keydown", function (e) {
   if (e.key === "Enter") addTask();
 });
 
@@ -82,7 +84,6 @@ function loadQuote() {
 loadQuote();
 setInterval(loadQuote, 20000);
 
-// Add custom schedule item
 function addScheduleItem() {
   const time = document.getElementById("timeInput").value.trim();
   const activity = document.getElementById("activityInput").value.trim();
@@ -91,48 +92,19 @@ function addScheduleItem() {
   const ul = document.querySelector(".time-blocks ul");
   const li = document.createElement("li");
 
-  const itemContent = document.createElement("span");
-  itemContent.innerHTML = `<strong>${time}</strong> ${activity}`;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "🗑️";
-  deleteBtn.classList.add("schedule-delete");
-  deleteBtn.onclick = function () {
-    li.remove();
-  };
-
-  li.appendChild(itemContent);
-  li.appendChild(deleteBtn);
-  ul.appendChild(li);
-
-  document.getElementById("timeInput").value = "";
-  document.getElementById("activityInput").value = "";
-}
-
-function addScheduleItem() {
-  const time = document.getElementById("timeInput").value.trim();
-  const activity = document.getElementById("activityInput").value.trim();
-  if (!time || !activity) return;
-
-  const ul = document.querySelector(".time-blocks ul");
-  const li = document.createElement("li");
-
-  // Create editable span
   const itemContent = document.createElement("span");
   itemContent.innerHTML = `<strong>${time}</strong> ${activity}`;
   itemContent.contentEditable = "true";
   itemContent.style.outline = "none";
   itemContent.title = "Click to edit";
 
-  // Optional: save edit on Enter key
   itemContent.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
-      itemContent.blur(); // remove focus to "save"
+      itemContent.blur();
     }
   });
 
-  // Create delete button
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "🗑️";
   deleteBtn.classList.add("schedule-delete");
@@ -144,11 +116,10 @@ function addScheduleItem() {
   li.appendChild(deleteBtn);
   ul.appendChild(li);
 
-  // Clear fields
   document.getElementById("timeInput").value = "";
   document.getElementById("activityInput").value = "";
 }
 
 function enterDashboard() {
-  document.getElementById("homepage").style.display = "none";
+  document.getElementById("homepage")?.style.display = "none";
 }
