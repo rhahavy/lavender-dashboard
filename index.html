@@ -71,6 +71,7 @@
     <br />
     <button class="enter-button" onclick="enterSite()">Enter Portfolio →</button>
   </div>
+<canvas id="glitterCanvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;"></canvas>
 
   <script>
     function enterSite() {
@@ -85,5 +86,55 @@
       }, 1000);
     }
   </script>
+
+  <script>
+  const canvas = document.getElementById('glitterCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createParticle() {
+    return {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 1,
+      opacity: Math.random(),
+      speedY: Math.random() * 0.5 + 0.2
+    };
+  }
+
+  function initGlitter() {
+    for (let i = 0; i < 100; i++) {
+      particles.push(createParticle());
+    }
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+      ctx.fill();
+      p.y += p.speedY;
+      if (p.y > canvas.height) {
+        p.y = 0;
+        p.x = Math.random() * canvas.width;
+      }
+    });
+    requestAnimationFrame(drawParticles);
+  }
+
+  initGlitter();
+  drawParticles();
+</script>
+
 </body>
 </html>
