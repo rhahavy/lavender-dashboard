@@ -170,3 +170,26 @@ li:hover {
   border-radius: 6px;
   padding: 2px 4px;
 }
+
+.schedule-inputs input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+.schedule-inputs {
+  margin: 40px auto;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
