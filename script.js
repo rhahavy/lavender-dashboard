@@ -123,3 +123,9 @@ function addScheduleItem() {
 function enterDashboard() {
   document.getElementById("homepage")?.style.display = "none";
 }
+
+function enterDashboard() {
+  document.getElementById("homepage").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+}
+
