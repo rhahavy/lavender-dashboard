@@ -193,3 +193,7 @@ li:hover {
   gap: 10px;
   align-items: center;
 }
+.schedule-inputs input:focus {
+  border-color: #8e44ad;
+  box-shadow: 0 0 5px #c1b2d3;
+}
