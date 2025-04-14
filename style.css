@@ -197,3 +197,31 @@ li:hover {
   border-color: #8e44ad;
   box-shadow: 0 0 5px #c1b2d3;
 }
+.time-blocks {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.time-blocks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quote-box {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: var(--accent);
+  color: white;
+  font-style: italic;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
