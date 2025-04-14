@@ -225,3 +225,35 @@ li:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.time-blocks {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #ffffff; /* white background */
+  color: #000000; /* black text */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.time-blocks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quote-box {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #ffffff; /* white background */
+  color: #000000; /* black text */
+  font-style: italic;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+border: 1px solid #e6e6fa; /* soft lavender border */
+
+
